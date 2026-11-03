@@ -1,5 +1,5 @@
 {
-  "name": "@local/dsh-idea",
+  "name": "dsh-idea-list",
   "version": "0.3.1",
   "type": "module",
   "description": "灵感清单：标题与长详情分开记录，自定义分类分区展示，点击紧凑卡片查看详情。",

@@ -257,7 +257,7 @@ function createStore({ storage, subscribeStorage = () => () => {}, lock = run =>
 
 // Built by build.mjs; store.js is inlined before this loader.
 window.__ModuleLoader__.load({
-  id: '@local/dsh-idea',
+  id: 'dsh-idea-list',
   factory(require) {
     const React = require('react');
     const h = React.createElement;

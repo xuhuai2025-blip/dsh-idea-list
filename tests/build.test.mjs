@@ -38,7 +38,7 @@ test('built client registers native slots and disposes browser storage listeners
     __ModuleLoader__: { load(value) { plugin = value; } },
   };
   vm.runInNewContext(await readFile(join(root, 'dist/client.js'), 'utf8'), { window });
-  assert.equal(plugin.id, '@local/dsh-idea');
+  assert.equal(plugin.id, 'dsh-idea-list');
   plugin.factory(name => { assert.equal(name, 'react'); return { createElement() {} }; }).apply({
     effect(run) { disposers.push(run()); },
     slots: { inject(_slot, run) { run(); }, register(meta) { registrations.push(meta); } },
