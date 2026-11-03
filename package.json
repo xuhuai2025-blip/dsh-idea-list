@@ -1,0 +1,33 @@
+{
+  "name": "@local/dsh-idea",
+  "version": "0.3.1",
+  "type": "module",
+  "description": "灵感清单：标题与长详情分开记录，自定义分类分区展示，点击紧凑卡片查看详情。",
+  "license": "MIT",
+  "publishConfig": { "access": "public" },
+  "engines": {
+    "node": ">=22.14.0",
+    "dsh": "^0.2.1-rc.5"
+  },
+  "packageManager": "pnpm@11.28.5",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./dist/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": ["index.js", "dist/", "cordis.patch.yml", "locale/*.json", "icon.svg", "README.md", "LICENSE"],
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node --test tests/*.test.mjs",
+    "prepack": "node build.mjs && node --test tests/*.test.mjs"
+  },
+  "dsh": {
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-renderer", "@deepseek-ai/dsh-client-ui-layout"]
+    }
+  }
+}
